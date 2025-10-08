@@ -31,7 +31,7 @@ chmod +x install-nethunter-termux
 ```
 ./install-nethunter-termux
 ```
-|||
+|       |       |
 |–––––––|–––––––|
 |nethunter|启动NetHunter命令行|
 |nethunter kex passwd|设置Kex密码|
