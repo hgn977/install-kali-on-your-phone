@@ -57,6 +57,10 @@ nano $PREFIX/bin/nh
 ```
 LANG=zh_CN.UTF-8
 ```
+火狐浏览器中文语言包
+```
+sudo apt install firefox-esr-l10n-zh-cn
+```
 ### 设置时区
 ```
 sudo dpkg-reconfigure tzdata
