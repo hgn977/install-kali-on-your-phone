@@ -31,6 +31,7 @@ chmod +x install-nethunter-termux
 ```
 ./install-nethunter-termux
 ```
+
 |       |       |
 |–––––––|–––––––|
 |nethunter|启动NetHunter命令行|
