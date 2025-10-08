@@ -94,7 +94,6 @@ nano $PREFIX/bin/nh
 下载启动脚本
 ```
 wget https://gitee.com/hgn977/install-kali-on-your-phone/raw/master/kali/nethunter_xfce4.sh
-
 ```
 ```
 chmod +x nethunter_xfce4.sh
