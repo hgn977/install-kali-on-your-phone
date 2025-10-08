@@ -32,14 +32,14 @@ chmod +x install-nethunter-termux
 ./install-nethunter-termux
 ```
 
-|       |       |
-|–––––––|–––––––|
-|nethunter|启动NetHunter命令行|
-|nethunter kex passwd|设置Kex密码|
-|nethunter kex & |启动NetHunter GUI|
-|nethunter kex stop |停止NetHunter GUI|
-|nethunter -r |以root用户运行NetHunter|
-|nh |Nethunter的快捷方式|
+<table>
+  <tr><td>nethunter</td><td>启动NetHunter命令行</td></tr>
+  <tr><td>nethunter kex passwd</td><td>设置Kex密码</td></tr>
+  <tr><td>nethunter kex &</td><td>启动NetHunter GUI</td></tr>
+  <tr><td>nethunter kex stop</td><td>停止NetHunter GUI</td></tr>
+  <tr><td>nethunter -r</td><td>以root用户运行NetHunter</td></tr>
+  <tr><td>nh</td><td>Nethunter的快捷方式</td></tr>
+</table>
 
 更换清华源
 ```
