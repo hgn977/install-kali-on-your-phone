@@ -40,6 +40,7 @@ kali启动命令
   <tr><td>nethunter -r</td><td>以root用户运行NetHunter</td></tr>
   <tr><td>nh</td><td>Nethunter的快捷方式</td></tr>
 </table>
+
 更换清华源
 ```
 sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
