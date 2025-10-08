@@ -31,6 +31,15 @@ chmod +x install-nethunter-termux
 ```
 ./install-nethunter-termux
 ```
+kali启动命令
+<table>
+  <tr><td>nethunter</td><td>启动NetHunter命令行</td></tr>
+  <tr><td>nethunter kex passwd</td><td>设置Kex密码</td></tr>
+  <tr><td>nethunter kex &</td><td>启动NetHunter GUI</td></tr>
+  <tr><td>nethunter kex stop</td><td>停止NetHunter GUI</td></tr>
+  <tr><td>nethunter -r</td><td>以root用户运行NetHunter</td></tr>
+  <tr><td>nh</td><td>Nethunter的快捷方式</td></tr>
+</table>
 更换清华源
 ```
 sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
@@ -40,6 +49,9 @@ sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g"
 sudo apt update && sudo apt upgrade -y
 ```
 安装postgresql-17报错处理
+```
+sudo dpkg --configure -a
+```
 ```
 printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-17.prerm >/dev/null
 ```
