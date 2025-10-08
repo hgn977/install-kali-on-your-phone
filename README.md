@@ -104,4 +104,4 @@ chmod +x nethunter_xfce4.sh
 ```
 ```
 ./nethunter_xfce4.sh
-```#在您的手机上安
+```
