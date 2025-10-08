@@ -31,7 +31,7 @@ chmod +x install-nethunter-termux
 ```
 ./install-nethunter-termux
 ```
-
+kali启动命令
 <table>
   <tr><td>nethunter</td><td>启动NetHunter命令行</td></tr>
   <tr><td>nethunter kex passwd</td><td>设置Kex密码</td></tr>
