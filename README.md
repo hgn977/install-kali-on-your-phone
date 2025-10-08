@@ -31,6 +31,7 @@ chmod +x install-nethunter-termux
 ```
 ./install-nethunter-termux
 ```
+
 更换清华源
 ```
 sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
@@ -40,6 +41,9 @@ sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g"
 sudo apt update && sudo apt upgrade -y
 ```
 安装postgresql-17报错处理
+```
+sudo dpkg --configure -a
+```
 ```
 printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-17.prerm >/dev/null
 ```
