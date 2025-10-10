@@ -54,6 +54,9 @@ sudo apt update && sudo apt upgrade -y
 sudo dpkg --configure -a
 ```
 ```
+sudo apt autoclean
+```
+```
 printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-17.prerm >/dev/null
 ```
 ### 设置中文
