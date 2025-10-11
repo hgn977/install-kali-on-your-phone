@@ -131,4 +131,5 @@ sudo apt install chromium chromium-l10n
 chromium --no-sandbox --password-store=basic
 ```
 `--no-sandbox`表示禁用沙盒，在容器里安装的无法使用沙盒
+
 `--password-store=basic`表示禁止设置密码
