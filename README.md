@@ -121,8 +121,13 @@ chmod +x nethunter_xfce4.sh
 ```
 ./nethunter_xfce4.sh
 ```
-### 火狐浏览器无法正常使用
+### 火狐浏览器无法正常使用处理
 #### 安装谷歌浏览器
 ```
 sudo apt install chromium chromium-l10n
 ```
+启动谷歌浏览器
+```
+chromium --no-sandbox
+```
+`--no-sandbox`表示禁用沙盒，在容器里安装的无法使用沙盒
