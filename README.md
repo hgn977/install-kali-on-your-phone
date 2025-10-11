@@ -121,8 +121,7 @@ chmod +x nethunter_xfce4.sh
 ```
 ./nethunter_xfce4.sh
 ```
-### 火狐浏览器无法正常使用处理
-#### 安装谷歌浏览器
+### 安装谷歌浏览器
 ```
 sudo apt install chromium chromium-l10n
 ```
