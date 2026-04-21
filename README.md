@@ -45,11 +45,19 @@ kali启动命令
 ```
 sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
 ```
+最新版本会出现无法联网的问题，复制下面内容到kali中粘贴直接回车就可以解决
+```
+cat > /etc/resolv.conf << EOF
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+nameserver 8.8.8.8
+EOF
+```
 更新软件源
 ```
 sudo apt update && sudo apt upgrade -y
 ```
-安装postgresql-17报错处理
+安装postgresql-18报错处理  (**如无此报错请直接忽略**)
 ```
 sudo dpkg --configure -a
 ```
@@ -57,7 +65,7 @@ sudo dpkg --configure -a
 sudo apt autoclean
 ```
 ```
-printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-17.prerm >/dev/null
+printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.prerm >/dev/null
 ```
 ### 设置中文
 ```
