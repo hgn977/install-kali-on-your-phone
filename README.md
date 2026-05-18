@@ -168,11 +168,11 @@ nano $PREFIX/bin/nh
 下载启动脚本
 > e17桌面
 > ```
-> wget https://github.com/hgn977/install-kali-on-your-phone/blob/main/kali/nethunter_e17.sh
+> wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_e17.sh
 > ```
 > KDE桌面
 > ```
-> wget https://github.com/hgn977/install-kali-on-your-phone/blob/main/kali/nethunter_kde.sh
+> wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_kde.sh
 > ```
 
 ```
