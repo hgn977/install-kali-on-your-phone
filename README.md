@@ -95,10 +95,10 @@ printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.p
 ```
 sudo apt update && sudo apt upgrade -y
 ```
-### 安装工具集合
+<!-- ### 安装工具集合
 ```
 sudo apt install kali-linux-default kali-linux-everything
-```
+``` -->
 ### 安装桌面
 > KDE桌面 
 > ```
