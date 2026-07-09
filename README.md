@@ -64,7 +64,7 @@ nh
 
 更换清华源
 ```
-sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
+sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list.d/kali.sources
 ```
 解决无法联网问题
 ```
