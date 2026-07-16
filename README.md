@@ -84,17 +84,9 @@ sudo apt update && sudo apt upgrade -y
 ```
 安装postgresql-18报错处理  (**如无此报错请直接忽略**)
 ```
-sudo dpkg --configure -a
+printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.prerm >/dev/null && sudo apt --fix-broken install
 ```
-```
-sudo apt autoclean
-```
-```
-printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.prerm >/dev/null
-```
-```
-sudo apt update && sudo apt upgrade -y
-```
+
 <!-- ### 安装工具集合
 ```
 sudo apt install kali-linux-default kali-linux-everything
