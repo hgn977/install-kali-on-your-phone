@@ -110,25 +110,6 @@ sudo dpkg-reconfigure tzdata
 #### VNC
 - 因为鸿蒙系统对权限控制严格无法使用termux：x11,所以使用vnc
 
-进入kali系统
-```
-nh
-```
-编辑VNC启动文件
-```
-sudo nano /etc/X11/Xtigervnc-session
-```
-修改启动桌面
-> KDE桌面 
-> ```
-> exec startplasma-x11
-> ```
-
-保存更改
-```
-Ctrl+S 保存
-Ctrl+X 退出
-```
 设置vnc密码
 ```
 nethunter kex passwd
@@ -144,6 +125,25 @@ nethunter kex &
 ```
 nethunter kex stop
 ```
+**KDE桌面启动**
+> 进入kali系统
+> ```
+> nh
+> ```
+> 编辑VNC启动文件
+> ```
+> sudo nano /etc/X11/Xtigervnc-session
+> ```
+> 修改为KDE桌面启动
+> KDE桌面 
+> ```
+> exec startplasma-x11
+> ```
+> 保存更改
+> ```
+> Ctrl+S 保存
+> Ctrl+X 退出
+> ```
 #### Termux:X11
 - 除鸿蒙系统外其他安卓可使用Termux:X11
 
