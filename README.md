@@ -21,20 +21,18 @@ pkg update && pkg upgrade
 ```
 安装基础软件
 ```
-pkg install x11-repo
+pkg install x11-repo && pkg install termux-x11-nightly pulseaudio wget android-tools proot-distro -y
 ```
-```
-pkg install termux-x11-nightly pulseaudio wget android-tools
-```
-<!-- ### 下载kali安装包
+
+### 下载kali安装包
 > 编号：1 (full)
 > ```
-> wget https://kali.download/nethunter-images/kali-2025.4/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
+> wget https://old.kali.org/nethunter-images/kali-2025.3/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
 > ```
 > 编号：3 (nano)
 > ```
-> wget https://kali.download/nethunter-images/kali-2025.4/rootfs/kali-nethunter-rootfs-nano-arm64.tar.xz
-> ``` -->
+> wget https://old.kali.org/nethunter-images/kali-2025.3/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
+> ```
 ### 安装kali
 ```
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
@@ -63,8 +61,9 @@ nh
 ```
 
 更换清华源
+<!-- sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list.d/kali.sources -->
 ```
-sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list.d/kali.sources
+sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
 ```
 解决无法联网问题
 ```
@@ -74,10 +73,10 @@ nameserver 1.0.0.1
 nameserver 8.8.8.8
 EOF
 ```
-锁定systemd
+<!-- 锁定systemd
 ```
 sudo apt-mark hold libsystemd0 systemd udev libsystemd-shared libudev1 systemd-sysv
-```
+``` -->
 更新软件源
 ```
 sudo apt update && sudo apt upgrade -y
@@ -92,13 +91,14 @@ printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.p
 sudo apt install kali-linux-default kali-linux-everything
 ``` -->
 ### 安装桌面
+> xfce4桌面
+> ```
+> # full版本默认已经安装
+> sudo apt install xfce4
+> ```
 > KDE桌面 
 > ```
 > sudo apt install kali-desktop-kde
-> ```
-> e17桌面
-> ```
-> sudo apt install kali-desktop-e17
 > ```
 
 ### 设置时区
@@ -123,10 +123,7 @@ sudo nano /etc/X11/Xtigervnc-session
 > ```
 > exec startplasma-x11
 > ```
-> e17桌面
-> ```
-> exec enlightenment_start
-> ```
+
 保存更改
 ```
 Ctrl+S 保存
@@ -158,9 +155,9 @@ nano $PREFIX/bin/nh
 -b /data/data/com.termux/files/usr/tmp:/tmp \
 ```
 下载启动脚本
-> e17桌面
+> xfce4桌面
 > ```
-> wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_e17.sh
+> wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_xfce4.sh
 > ```
 > KDE桌面
 > ```
@@ -168,10 +165,10 @@ nano $PREFIX/bin/nh
 > ```
 
 ```
-chmod +x nethunter_e17.sh
+chmod +x nethunter_xfce4.sh
 ```
 ```
-./nethunter_e17.sh
+./nethunter_xfce4.sh
 ```
 ### 安装谷歌浏览器
 ```
