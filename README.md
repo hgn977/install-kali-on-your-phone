@@ -27,12 +27,9 @@ pkg install x11-repo && pkg install termux-x11-nightly pulseaudio wget android-t
 ### 下载kali安装包
 > 编号：1 (full)
 > ```
-> wget https://old.kali.org/nethunter-images/kali-2025.3/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
+> wget https://old.kali.org/nethunter-images/kali-2025.2/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
 > ```
-> 编号：3 (nano)
-> ```
-> wget https://old.kali.org/nethunter-images/kali-2025.3/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
-> ```
+
 ### 安装kali
 ```
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
@@ -202,4 +199,5 @@ LANG=zh_CN.UTF-8
 <!-- 火狐浏览器中文语言包
 ```
 sudo apt install firefox-esr-l10n-zh-cn
-``` -->
+``` 
+-->
