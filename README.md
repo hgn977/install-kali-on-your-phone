@@ -1,8 +1,8 @@
 # 手机安装kali
 所需软件
-- [Termux](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/termux-app_v0.118.3+github-debug_arm64-v8a.apk)
-- [Termux: X11](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/Termux_X11_1.03.00.apk)
-- [VNC](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/com.realvnc.viewer.android.apk)
+- Termux：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/termux-app_v0.118.3+github-debug_arm64-v8a.apk)
+- Termux: X11：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/Termux_X11_1.03.00.apk)
+- VNC：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/com.realvnc.viewer.android.apk)
 
 
 
