@@ -24,15 +24,20 @@ pkg update && pkg upgrade
 pkg install x11-repo && pkg install termux-x11-nightly pulseaudio wget android-tools proot-distro -y
 ```
 
-### 下载kali安装包
-> 编号：1 (full)
-> ```
-> wget https://old.kali.org/nethunter-images/kali-2025.2/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
-> ```
+[//]: # (### 下载kali安装包)
+
+[//]: # (> 编号：1 &#40;full&#41;)
+
+[//]: # (> ```)
+
+[//]: # (> wget https://old.kali.org/nethunter-images/kali-2025.2/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz)
+
+[//]: # (> ```)
 
 ### 安装kali
+下载安装脚本
 ```
-wget -O install-nethunter-termux https://offs.ec/2MceZWr
+wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/install-nethunter-termux
 ```
 添加运行权限
 ```
@@ -55,6 +60,10 @@ kali启动命令
 进入kali系统
 ```
 nh
+```
+替换新密钥
+```
+sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
 ```
 
 更换清华源
