@@ -1,20 +1,16 @@
 # 手机安装kali
-所需软件
+## 所需软件
 - Termux：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/termux-app_v0.118.3+github-debug_arm64-v8a.apk)
 - Termux: X11：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/Termux_X11_1.03.00.apk)
 - VNC：[点击下载](https://github.com/hgn977/install-kali-on-your-phone/releases/download/v0.1/com.realvnc.viewer.android.apk)
 
 
 
-### Termux基础设置
+## Termux基础设置
 获取存储权限
 ```
 termux-setup-storage
 ```
-<!-- 切换清华源
-```
-termux-change-repo
-``` -->
 更新软件源
 ```
 pkg update && pkg upgrade
@@ -24,17 +20,7 @@ pkg update && pkg upgrade
 pkg install x11-repo && pkg install termux-x11-nightly pulseaudio wget android-tools proot-distro -y
 ```
 
-[//]: # (### 下载kali安装包)
-
-[//]: # (> 编号：1 &#40;full&#41;)
-
-[//]: # (> ```)
-
-[//]: # (> wget https://old.kali.org/nethunter-images/kali-2025.2/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz)
-
-[//]: # (> ```)
-
-### 安装kali
+## 安装kali
 下载安装脚本
 ```
 wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/install-nethunter-termux
@@ -61,28 +47,33 @@ kali启动命令
 ```
 nh
 ```
-替换新密钥
-```
-sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
-```
-
-更换清华源
-<!-- sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list.d/kali.sources -->
-```
-sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
-```
-解决无法联网问题
+解决联网问题
 ```
 cat > /etc/resolv.conf << EOF
+nameserver 223.5.5.5
+nameserver 119.29.29.29
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 nameserver 8.8.8.8
 EOF
 ```
-<!-- 锁定systemd
+
+更换清华源
+```
+sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g" /etc/apt/sources.list
+```
+禁用更新
+```
+sudo apt-mark hold xfce4 xfce4-session xfce4-settings xfce4-panel xfce4-power-manager plymouth plymouth-label kali-themes kali-desktop-core kali-desktop-xfce initramfs-tools xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins
+```
+
+<!--
+ 锁定systemd
 ```
 sudo apt-mark hold libsystemd0 systemd udev libsystemd-shared libudev1 systemd-sysv
-``` -->
+``` 
+-->
+
 更新软件源
 ```
 sudo apt update && sudo apt upgrade -y
@@ -95,8 +86,9 @@ printf '%s\n' '#!/bin/sh' 'exit 0' | sudo tee /var/lib/dpkg/info/postgresql-18.p
 <!-- ### 安装工具集合
 ```
 sudo apt install kali-linux-default kali-linux-everything
-``` -->
-### 安装桌面
+``` 
+-->
+## 安装桌面
 > xfce4桌面
 > ```
 > # full版本默认已经安装
@@ -107,13 +99,10 @@ sudo apt install kali-linux-default kali-linux-everything
 > sudo apt install kali-desktop-kde
 > ```
 
-### 设置时区
-```
-sudo dpkg-reconfigure tzdata
-```
-### 启动图形桌面
 
-#### VNC
+## 启动图形桌面
+
+### VNC
 - 因为鸿蒙系统对权限控制严格无法使用termux：x11,所以使用vnc
 
 设置vnc密码
@@ -150,7 +139,7 @@ nethunter kex stop
 > Ctrl+S 保存
 > Ctrl+X 退出
 > ```
-#### Termux:X11
+### Termux:X11
 - 除鸿蒙系统外其他安卓可使用Termux:X11
 
 打开kali启动脚本
@@ -170,13 +159,25 @@ nano $PREFIX/bin/nh
 > wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_kde.sh
 > ```
 
-```
-chmod +x nethunter_xfce4.sh
-```
-```
-./nethunter_xfce4.sh
-```
-### 安装谷歌浏览器
+添加执行权限
+> xfce4桌面
+> ```
+> chmod +x nethunter_xfce4.sh
+> ```   
+> KDE桌面
+> ```                          
+> chmod +x nethunter_kde.sh  
+> ```
+运行脚本
+> xfce4桌面
+> ```
+> ./nethunter_xfce4.sh
+> ```
+> KDE桌面
+> ```
+> ./nethunter_xfce4.sh
+> ```
+## 安装谷歌浏览器
 ```
 sudo apt install chromium chromium-l10n
 ```
@@ -187,8 +188,12 @@ chromium --no-sandbox --password-store=basic
 `--no-sandbox`表示禁用沙盒，在容器里安装的无法使用沙盒
 
 `--password-store=basic`表示禁止设置密码
+## 设置时区
+```
+sudo dpkg-reconfigure tzdata
+```
 
-### 设置中文
+## 设置中文
 ```
 sudo apt install -y fonts-noto-cjk fonts-wqy-zenhei fonts-wqy-microhei
 ```
@@ -210,3 +215,6 @@ LANG=zh_CN.UTF-8
 sudo apt install firefox-esr-l10n-zh-cn
 ``` 
 -->
+
+## 免责声明
+本教程仅供合法学习与研究使用，请勿用于未经授权的测试。
