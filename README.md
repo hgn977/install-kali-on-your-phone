@@ -64,11 +64,11 @@ sed -i "s@http://http.kali.org/kali@https://mirrors.tuna.tsinghua.edu.cn/kali@g"
 ```
 禁用更新
 ```
-sudo apt-mark hold xfce4 xfce4-session xfce4-settings xfce4-panel xfce4-power-manager plymouth plymouth-label kali-themes kali-desktop-core kali-desktop-xfce initramfs-tools xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins
+sudo apt-mark hold libgdk-pixbuf-2.0-0 gir1.2-gdkpixbuf-2.0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
 ```
 
 <!--
- 锁定systemd
+锁定systemd
 ```
 sudo apt-mark hold libsystemd0 systemd udev libsystemd-shared libudev1 systemd-sysv
 ``` 
