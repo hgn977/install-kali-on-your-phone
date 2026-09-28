@@ -94,10 +94,6 @@ sudo apt install kali-linux-default kali-linux-everything
 > # full版本默认已经安装
 > sudo apt install xfce4
 > ```
-> KDE桌面 
-> ```
-> sudo apt install kali-desktop-kde
-> ```
 
 
 ## 启动图形桌面
@@ -120,25 +116,6 @@ nethunter kex &
 ```
 nethunter kex stop
 ```
-**KDE桌面启动**
-> 进入kali系统
-> ```
-> nh
-> ```
-> 编辑VNC启动文件
-> ```
-> sudo nano /etc/X11/Xtigervnc-session
-> ```
-> 修改为KDE桌面启动
-> KDE桌面 
-> ```
-> exec startplasma-x11
-> ```
-> 保存更改
-> ```
-> Ctrl+S 保存
-> Ctrl+X 退出
-> ```
 ### Termux:X11
 - 除鸿蒙系统外其他安卓可使用Termux:X11
 
@@ -154,26 +131,14 @@ nano $PREFIX/bin/nh
 > ```
 > wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_xfce4.sh
 > ```
-> KDE桌面
-> ```
-> wget https://raw.githubusercontent.com/hgn977/install-kali-on-your-phone/refs/heads/main/kali/nethunter_kde.sh
-> ```
 
 添加执行权限
 > xfce4桌面
 > ```
 > chmod +x nethunter_xfce4.sh
-> ```   
-> KDE桌面
-> ```                          
-> chmod +x nethunter_kde.sh  
 > ```
 运行脚本
 > xfce4桌面
-> ```
-> ./nethunter_xfce4.sh
-> ```
-> KDE桌面
 > ```
 > ./nethunter_xfce4.sh
 > ```
